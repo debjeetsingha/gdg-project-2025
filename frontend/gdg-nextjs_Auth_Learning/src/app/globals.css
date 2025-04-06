@@ -1,0 +1,128 @@
+@import "tailwindcss";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Animation for background gradient */
+body {
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
+
+
+.bg-\[url\(\'\.\/images\/chat-bg\.jpg\'\)\] {
+  background-image: url('/images/chat-bg.jpg');
+}
+.bg-\[url\(\'\/images\/chat-bg\.jpg\'\)\] {
+  background-image: url('/images/chat-bg.jpg');
+}
+
+.bg-\[url\(\'\.\/images\/bg\.jpg\'\)\] {
+  background-image: url('/images/bg.jpg');
+}
+.bg-\[url\(\'\/images\/bg\.jpg\'\)\] {
+  background-image: url('/images/bg.jpg');
+}
+
+.bg-\[url\(\'\.\/images\/trading-bg\.png\'\)\] {
+  background-image: url('/images/trading-bg.jpg');
+}
+.bg-\[url\(\'\/images\/trading-bg\.png\'\)\] {
+  background-image: url('/images/trading-bg.jpg');
+}
+
+
+
+/* Google Sign-In Button Styles */
+.google-signin-btn {
+  transition: all 0.3s ease;
+}
+
+.google-signin-btn:hover {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.google-signin-btn:active {
+  transform: scale(0.98);
+}
+
+/* Divider Styles */
+.divider {
+  position: relative;
+  margin: 1.5rem 0;
+}
+
+.divider::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background-color: #4b5563; /* gray-600 */
+  z-index: -1;
+}
+
+.divider-text {
+  background-color: rgba(31, 41, 55, 0.5); /* bg-gray-800/50 */
+  padding: 0 0.5rem;
+}
+
+.google-logo {
+  @apply w-5 h-5 flex-shrink-0;
+}
+
+/* Alternative if you want more control over the SVG */
+.google-logo svg {
+  @apply w-full h-full;
+}
+
+/* Animation for Google button hover */
+.google-button:hover .google-logo {
+  @apply transform scale-110 transition-transform duration-200;
+}
+
+/* Dark mode adjustments for Google logo */
+@media (prefers-color-scheme: dark) {
+  .google-logo {
+    @apply filter brightness-125;
+  }
+}
+
+/* Loading state for Google button */
+.google-button-loading .google-logo {
+  @apply opacity-50;
+}
