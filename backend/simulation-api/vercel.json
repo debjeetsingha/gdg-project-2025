@@ -1,0 +1,31 @@
+{
+    "version": 2,
+    "builds": [
+    {
+    "src": "main.py",
+    "use": "@vercel/python"
+    }
+    ],
+    "routes": [
+    {
+    "src": "/",
+    "dest": "main.py"
+    },
+    {
+    "src": "/stock/(.*)",
+    "dest": "main.py"
+    },
+    {
+    "src": "/stock-data",
+    "dest": "main.py"
+    },
+    {
+    "src": "/fakestockdata",
+    "dest": "main.py"
+    },
+    {
+        "src": "/docs",
+        "dest": "main.py"
+    }
+    ]
+    }
